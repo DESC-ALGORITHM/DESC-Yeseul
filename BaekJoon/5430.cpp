@@ -2,9 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
-#include <cstdio>
 #include <deque>
-#pragma warning (disable:4996)
 using namespace std;
 
 int main() {
