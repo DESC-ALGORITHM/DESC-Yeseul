@@ -35,7 +35,7 @@ int main() {
 			int tmp;
 			pair<int, int> document;
 			cin >> tmp;
-			document = pair<int, int>(j, tmp);
+			document = pair<int, int>(j, tmp); // <j번 문서, 중요도>
 
 			score.push_back(tmp);
 			Q.push(document); //큐에 집어넣기
@@ -44,19 +44,19 @@ int main() {
 		int idx = 0;
 		
 		while(!Q.empty()) {
-			int num = Q.front().second; // 현재 큐의 첫번째 원소
+			int nowScore = Q.front().second; // 현재 큐의 첫번째 원소
 			bool change = false;
 
 			for (int check = 1; check < Q.size(); check++) {
 
-				if (num < score[check]) { // 큐의 맨 앞 원소보다 더 큰 문서가 있을 때
-					pair<int, int> temp = Q.front();
+				if (nowScore < score[check]) { // 큐의 맨 앞 원소보다 더 큰 문서가 있을 때
+					pair<int, int> now = Q.front();
 					Q.pop(); //앞의 원소 삭제
-					Q.push(temp);
+					Q.push(now);
 
 					//벡터의 값도 바꿔주기
 					score.erase(score.begin() + 0);
-					score.push_back(num);
+					score.push_back(nowScore);
 					change = true;
 					break;
 				}
