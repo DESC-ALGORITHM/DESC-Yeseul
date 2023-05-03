@@ -528,4 +528,6 @@ $RECYCLE.BIN/
 .idea/
 *.txt
 
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/windows,vs,clion,c++
